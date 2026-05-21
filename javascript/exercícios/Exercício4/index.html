@@ -4,63 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Desconto</title>
-    <style>
-        /* Estilos básicos para facilitar a visualização */
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
-        }
-        .calculadora {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            width: 300px;
-        }
-        h2 {
-            text-align: center;
-            color: #333;
-        }
-        .campo {
-            margin-bottom: 15px;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        input {
-            width: 100%;
-            padding: 8px;
-            box-sizing: border-box; /* Garante que o padding não aumenta a largura */
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        button {
-            width: 100%;
-            padding: 10px;
-            background-color: #28a745;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        button:hover {
-            background-color: #218838;
-        }
-        #resultado {
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #e9ecef;
-            border-radius: 5px;
-            display: none; /* Esconde o resultado até clicar no botão */
-        }
-    </style>
+    
 </head>
 <body>
 
@@ -95,6 +39,7 @@
             // 1. Pegar os valores inseridos nos campos (Input)
             let valor = document.getElementById('valorOriginal').value;
             let percentual = document.getElementById('percentual').value;
+
 
             // Verificar se o usuário realmente digitou algo (Validação simples)
             if (valor === "" || percentual === "") {
