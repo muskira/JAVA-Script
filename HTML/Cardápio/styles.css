@@ -1,0 +1,22 @@
+span{
+    font-style: normal;
+    font-size: 20px;
+    color: red;   
+
+}
+.cor-nome{
+    color: red;
+}
+
+
+div{
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 40px;
+    padding-top: 50px;
+    text-align: left;
+    background-color: rgb(11, 204, 252);
+    width: 50%;
+    height: 100px;
+    border: 7px solid #020007;
+}

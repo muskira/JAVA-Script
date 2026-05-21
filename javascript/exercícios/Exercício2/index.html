@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>CONVERSOR DE HORAS</h1>
+    
+    <label for="segundos">Digite os segundos</label>
+    <input id="segundos" type="number" placeholder="Exemplo: 3550" />
+    
+    <button onclick="converter()">Converter</button>
+    
+    <h2>
+        Resultado:
+        <span id="resultado"></span>
+    </h2>
+
+    <script>
+        function converter(){
+            // Lê o valor digitado
+            let totalSegundos = Number(document.getElementById("segundos").value);
+            // Calcula as horas
+            let horas = Math.floor(totalSegundos / 3600);
+            // Calcula o resto que sobrou para calcular os minutos
+            let restoAposHoras = totalSegundos % 3600;
+            // Calcula os minutos usando o resto
+            let minutos = Math.floor(restoAposHoras / 60);
+            // Calcula os segundos usando o resto
+            let segundos = restoAposHoras % 60;
+
+            document.getElementById("resultado").innerHTML =
+            `${horas} hora(s), ${minutos} minuto(s), ${segundos} segundo(s)`;
+        }
+    </script>
+                
+</body>
+</html>

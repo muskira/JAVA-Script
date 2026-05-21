@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calculadora de IMC</h1>
+    
+    <label for="Peso">Digite seu peso</label>
+    <input id="Digite seu peso" type="number" placeholder="Digite seu peso">
+
+    <label for="Altura">Digite sua altura</label>
+    <input id="Digite sua altura" type="number" placeholder="Digite sua altura">
+
+    <button onclick="calcular()">calcular</button>
+    
+    <h2>Resultado: <span id="resultado">0</span></h2>
+    <h2 id="mensagem"></h2>
+
+    <script>
+        function calcular(){
+            let peso = document.getElementById("Digite seu peso").value;
+            let altura = document.getElementById("Digite sua altura").value;
+            let calcular = Number(peso) / Number(altura*altura)
+        
+            
+            document.getElementById("resultado").innerHTML = calcular.toFixed(3)
+            
+            if(calcular < 18.5){
+                document.getElementById("mensagem").innerHTML = "Abaixo do peso"
+            }else if(calcular > 18.5 && calcular < 24.9){
+                document.getElementById("mensagem").innerHTML = "Peso normal"
+            }else if(calcular > 24.9 && calcular < 29.9){
+                document.getElementById("mensagem").innerHTML = "Sobrepeso"
+            }else if(calcular > 29.9 && calcular < 34.9){
+                document.getElementById("mensagem").innerHTML = "Obesidade Grau I"
+            }else if(calcular > 34.9 && calcular < 39.9){
+                document.getElementById("mensagem").innerHTML = "Obesidade Grau II"
+            }else if(calcular >= 40.0){
+                document.getElementById("mensagem").innerHTML = "Obesidade Grau III (Mórbida)"
+
+            }
+
+            }
+
+    </script>
+  
+    
+</body>
+</html>
