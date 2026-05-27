@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Verificador de Triângulo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        input {
+            margin: 5px;
+            padding: 8px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #resultado {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h2>🔺 Verificador de Triângulo</h2>
+    
+    <label>Digite o 1º lado: </label>
+    <input type="number" id="lado1"><br>
+    
+    <label>Digite o 2º lado: </label>
+    <input type="number" id="lado2"><br>
+    
+    <label>Digite o 3º lado: </label>
+    <input type="number" id="lado3"><br>
+    
+    <button onclick="verificarTriangulo()">Verificar</button>
+    
+    <p id="resultado"></p>
+
+    <script>
+        function verificarTriangulo() {
+            // PASSO 1: Obter os valores dos inputs
+            let lado1 = parseFloat(document.getElementById('lado1').value);
+            let lado2 = parseFloat(document.getElementById('lado2').value);
+            let lado3 = parseFloat(document.getElementById('lado3').value);
+            
+            // PASSO 2: Verificar se são números válidos
+            if (isNaN(lado1) || isNaN(lado2) || isNaN(lado3)) {
+                document.getElementById('resultado').innerText = "❌ Por favor, digite números válidos!";
+                return;
+            }
+            
+            // PASSO 3: Verificar se podem formar um triângulo
+            if (lado1 + lado2 > lado3 && 
+                lado1 + lado3 > lado2 && 
+                lado2 + lado3 > lado1) {
+                
+                // PASSO 4: Classificar o tipo de triângulo
+                if (lado1 === lado2 && lado2 === lado3) {
+                    // Todos iguais
+                    document.getElementById('resultado').innerText = "✅ É um TRIÂNGULO EQUILÁTERO!";
+                    document.getElementById('resultado').style.color = "blue";
+                } 
+                else if (lado1 === lado2 || lado1 === lado3 || lado2 === lado3) {
+                    // Dois lados iguais
+                    document.getElementById('resultado').innerText = "✅ É um TRIÂNGULO ISÓSCELES!";
+                    document.getElementById('resultado').style.color = "green";
+                } 
+                else {
+                    // Todos diferentes
+                    document.getElementById('resultado').innerText = "✅ É um TRIÂNGULO ESCALENO!";
+                    document.getElementById('resultado').style.color = "orange";
+                }
+            } else {
+                // Não forma triângulo
+                document.getElementById('resultado').innerText = "❌ NÃO forma um triângulo!";
+                document.getElementById('resultado').style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
