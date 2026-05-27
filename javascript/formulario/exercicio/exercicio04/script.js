@@ -3,7 +3,7 @@ const formulario = document.getElementById("formulario");
     const mensagem = document.getElementById("mensagem");
 
     formulario.addEventListener("submit", function(event) {
-      event.preventDefault();
+      event.preventDefault(); //não carrega a página
 
       const valorEmail = email.value;
 
