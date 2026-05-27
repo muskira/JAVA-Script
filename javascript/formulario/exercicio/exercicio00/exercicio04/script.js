@@ -1,6 +1,6 @@
     // Seleciona os elementos
-    const aceite = document.getElementById("aceite");
-    const btnEnviar = document.getElementById("btnEnviar");
+    let aceite = document.getElementById("aceite");
+    let btnEnviar = document.getElementById("btnEnviar");
 
     // Evento de mudança no checkbox
     aceite.addEventListener("change", function () {
