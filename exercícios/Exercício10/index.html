@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INVERSOR DE TEXTO</title>
+</head>
+<body>
+    <h1>INVERSOR DE TEXTO</h1>
+    <label for="texto">Digite um texto</label>
+    <input id="texto" type="text" placeholder="Digite qualquer texto">
+
+    <button onclick="Inverta()">Inverta seu texto</button>
+    
+    <h2>Inversão do texto:</h2> <h2 id="Inversão"></h2>
+
+    <script>
+        function Inverta(){
+            let string = document.getElementById("texto").value;
+            if(string === ""){
+                document.getElementById("Inversão").innerHTML = "Insira um texto!";
+                return;
+            }
+            let textoInvertido = string.split("").reverse().join("");
+            document.getElementById("Inversão").innerHTML = textoInvertido;
+        }
+
+
+    </script>
+
+</body>
+</html>

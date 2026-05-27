@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Desconto</title>
+    
+</head>
+<body>
+
+    <div class="calculadora">
+        <h2>Calculadora de Desconto</h2>
+        
+        <!-- 1. INPUT DO VALOR DO PRODUTO -->
+        <div class="campo">
+            <label for="valorOriginal">Valor do Produto (R$):</label>
+            <input type="number" id="valorOriginal" placeholder="Ex: 100.00">
+        </div>
+
+        <!-- 2. INPUT DA PORCENTAGEM -->
+        <div class="campo">
+            <label for="percentual">Porcentagem (%):</label>
+            <input type="number" id="percentual" placeholder="Ex: 10">
+        </div>
+
+        <!-- 3. BOTÃO PARA CALCULAR -->
+        <button onclick="calcularDesconto()">Calcular</button>
+
+        <!-- 4. AREA ONDE APARECERÁ O RESULTADO -->
+        <div id="resultado">
+            <p>Valor Descontado: <strong id="valorDescontado">R$ 0,00</strong></p>
+            <p>Valor Final: <strong id="valorFinal">R$ 0,00</strong></p>
+        </div>
+    </div>
+
+    <script>
+        // Lógica do JavaScript
+        function calcularDesconto() {
+            // 1. Pegar os valores inseridos nos campos (Input)
+            let valor = document.getElementById('valorOriginal').value;
+            let percentual = document.getElementById('percentual').value;
+
+
+            // Verificar se o usuário realmente digitou algo (Validação simples)
+            if (valor === "" || percentual === "") {
+                alert("Por favor, preencha os dois campos!");
+                return;
+            }
+
+            // 2. Converter o texto (string) em número (Number)
+            valor = Number(valor);
+            percentual = Number(percentual);
+
+            // 3. Fazer a conta
+            // Regra de 3 simples: (percentual / 100) * valor = valor do desconto
+            // Exemplo: 10% de 100. O mesmo que 0.10 * 100 = 10.
+            let desconto = (percentual / 100) * valor;
+            
+            // O valor final é o original menos o desconto
+            let final = valor - desconto;
+
+            // 4. Atualizar o HTML com os resultados
+            // A função .toFixed(2) formata o número para ter apenas 2 casas decimais (ex: 10,00)
+            document.getElementById('valorDescontado').innerText = "R$ " + desconto.toFixed(2);
+            document.getElementById('valorFinal').innerText = "R$ " + final.toFixed(2);
+
+            // Mostrar a div de resultado que estava escondida (display: none)
+            document.getElementById('resultado').style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
