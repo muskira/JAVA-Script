@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+
+  input {
+    padding: 10px;
+    width: 250px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+  }
+
+  .input-valido {
+    border-color: green;
+  }
+
+  .input-invalido {
+    border-color: red;
+  }
+
+  #mensagem {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+
+  .erro {
+    color: red;
+  }
+
+  .sucesso {
+    color: green;
+  }
